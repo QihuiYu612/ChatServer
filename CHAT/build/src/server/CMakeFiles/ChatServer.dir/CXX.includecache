@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/server/chatserver.hpp
+muduo/net/TcpServer.h
+-
+muduo/net/EventLoop.h
+-
+
+/home/yuqihui/CHAT/src/server/chatserver.cpp
+chatserver.hpp
+/home/yuqihui/CHAT/src/server/chatserver.hpp
+functional
+-
+
+/home/yuqihui/CHAT/src/server/main.cpp
+chatserver.hpp
+/home/yuqihui/CHAT/src/server/chatserver.hpp
+iostream
+-
+
