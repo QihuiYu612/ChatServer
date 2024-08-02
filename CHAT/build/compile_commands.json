@@ -1,17 +1,17 @@
 [
 {
   "directory": "/home/yuqihui/CHAT/build/src/server",
-  "command": "/usr/bin/g++    -g -g -I/home/yuqihui/CHAT/include -I/home/yuqihui/CHAT/include/server    -o CMakeFiles/ChatServer.dir/chatserver.cpp.o -c /home/yuqihui/CHAT/src/server/chatserver.cpp",
+  "command": "/usr/bin/g++    -g -g -I/home/yuqihui/CHAT/include -I/home/yuqihui/CHAT/include/server -I/home/yuqihui/CHAT/thirdparty    -o CMakeFiles/ChatServer.dir/chatserver.cpp.o -c /home/yuqihui/CHAT/src/server/chatserver.cpp",
   "file": "/home/yuqihui/CHAT/src/server/chatserver.cpp"
 },
 {
   "directory": "/home/yuqihui/CHAT/build/src/server",
-  "command": "/usr/bin/g++    -g -g -I/home/yuqihui/CHAT/include -I/home/yuqihui/CHAT/include/server    -o CMakeFiles/ChatServer.dir/main.cpp.o -c /home/yuqihui/CHAT/src/server/main.cpp",
+  "command": "/usr/bin/g++    -g -g -I/home/yuqihui/CHAT/include -I/home/yuqihui/CHAT/include/server -I/home/yuqihui/CHAT/thirdparty    -o CMakeFiles/ChatServer.dir/main.cpp.o -c /home/yuqihui/CHAT/src/server/main.cpp",
   "file": "/home/yuqihui/CHAT/src/server/main.cpp"
 },
 {
   "directory": "/home/yuqihui/CHAT/build/src/server",
-  "command": "/usr/bin/g++    -g -g -I/home/yuqihui/CHAT/include -I/home/yuqihui/CHAT/include/server    -o CMakeFiles/ChatServer.dir/chatservice.cpp.o -c /home/yuqihui/CHAT/src/server/chatservice.cpp",
+  "command": "/usr/bin/g++    -g -g -I/home/yuqihui/CHAT/include -I/home/yuqihui/CHAT/include/server -I/home/yuqihui/CHAT/thirdparty    -o CMakeFiles/ChatServer.dir/chatservice.cpp.o -c /home/yuqihui/CHAT/src/server/chatservice.cpp",
   "file": "/home/yuqihui/CHAT/src/server/chatservice.cpp"
 }
 ]

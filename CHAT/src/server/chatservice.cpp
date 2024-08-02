@@ -1,5 +1,7 @@
 #include "chatservice.hpp"
 #include "public.hpp"
+#include "muduo/base/Logging.h"
+using namespace muduo;
 
 // 获取单例对象的接口函数
 ChatService *ChatService::instance()
@@ -19,20 +21,28 @@ ChatService::ChatService()
 MsgHandler ChatService::getHandler(int msgid)
 {
     //
-
-    
-     
-    return _msgHandlerMap[msgid];
+    auto it = _msgHandlerMap.find(msgid);
+    if(it == _msgHandlerMap.end())
+    {
+        // 返回一个默认的处理器，空操作
+        return [=](const TcpConnectionPtr &conn, json &js, Timestamp time){
+            LOG_ERROR << "msgid:" << msgid << " con not find handler!";
+        };
+    }
+    else
+    {
+        return _msgHandlerMap[msgid];
+    }
 }
 
 // 处理登录业务
 void ChatService::login(const TcpConnectionPtr &conn, json &js, Timestamp time)
 {
-
+    LOG_INFO << "do login service!!!";
 }
 
 // 处理注册业务
 void ChatService::reg(const TcpConnectionPtr &conn, json &js, Timestamp time)
 {
-
+    LOG_INFO << "do reg service!!!";
 }

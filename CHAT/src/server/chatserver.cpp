@@ -1,5 +1,6 @@
 #include "chatserver.hpp"
 #include "json.hpp"
+#include "chatservice.hpp"
 
 #include <functional>
 #include <string>
@@ -50,5 +51,7 @@ void ChatServer::onMessage(const TcpConnectionPtr &conn, // 连接
     json js = json::parse(buf);
     // 完全解耦网络模块和业务模块，不调用服务层的方法
     // 通过js["msgid"] 获取-> 业务handler -> conn
-    
+    auto msgHandler = ChatService::instance()->getHandler(js["msgid"].get<int>());
+    // 回调消息绑定好的事件处理器，来执行相应的业务处理
+    msgHandler(conn, js, time);
 }
