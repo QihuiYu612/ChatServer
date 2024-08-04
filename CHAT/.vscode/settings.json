@@ -53,6 +53,13 @@
         "set": "cpp",
         "string": "cpp",
         "string_view": "cpp",
-        "variant": "cpp"
-    }
+        "variant": "cpp",
+        "mutex": "cpp",
+        "chrono": "cpp",
+        "condition_variable": "cpp",
+        "ctime": "cpp",
+        "ratio": "cpp",
+        "thread": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
 }

@@ -6,12 +6,6 @@
 
 #IncludeRegexTransform: 
 
-../include/server/chatserver.hpp
-muduo/net/TcpServer.h
--
-muduo/net/EventLoop.h
--
-
 ../include/server/chatservice.hpp
 muduo/net/TcpConnection.h
 -
@@ -19,10 +13,22 @@ unordered_map
 -
 functional
 -
+mutex
+-
+usermodel.hpp
+../include/server/usermodel.hpp
 json.hpp
 ../include/server/json.hpp
 
 ../include/server/public.hpp
+
+../include/server/user.hpp
+string
+-
+
+../include/server/usermodel.hpp
+user.hpp
+../include/server/user.hpp
 
 ../thirdparty/json.hpp
 algorithm
@@ -354,18 +360,6 @@ limits
 type_traits
 -
 
-/home/yuqihui/CHAT/src/server/chatserver.cpp
-chatserver.hpp
-/home/yuqihui/CHAT/src/server/chatserver.hpp
-json.hpp
-/home/yuqihui/CHAT/src/server/json.hpp
-chatservice.hpp
-/home/yuqihui/CHAT/src/server/chatservice.hpp
-functional
--
-string
--
-
 /home/yuqihui/CHAT/src/server/chatservice.cpp
 chatservice.hpp
 /home/yuqihui/CHAT/src/server/chatservice.hpp
@@ -373,10 +367,6 @@ public.hpp
 /home/yuqihui/CHAT/src/server/public.hpp
 muduo/base/Logging.h
 /home/yuqihui/CHAT/src/server/muduo/base/Logging.h
-
-/home/yuqihui/CHAT/src/server/main.cpp
-chatserver.hpp
-/home/yuqihui/CHAT/src/server/chatserver.hpp
 iostream
 -
 
