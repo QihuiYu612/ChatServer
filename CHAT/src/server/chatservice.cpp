@@ -23,6 +23,7 @@ ChatService::ChatService()
 {
     _msgHandlerMap.insert({LOGIN_MSG, std::bind(&ChatService::login, this, _1, _2, _3)});
     _msgHandlerMap.insert({REG_MSG, std::bind(&ChatService::reg, this, _1, _2, _3)});
+    _msgHandlerMap.insert({ONE_CHAT_MSG, std::bind(&ChatService::oneChat, this, _1, _2, _3)});
 }
 
 // 获取消息对应的处理器
@@ -159,8 +160,31 @@ void ChatService::clientCloseException(const TcpConnectionPtr &conn)
     }
 }
 
+void ChatService::oneChat(const TcpConnectionPtr &conn, json &js, Timestamp time)
+{
+    int toid = js["to"].get<int>();
+
+    {
+        lock_guard<mutex> lock(_connMutex);
+        auto it = _userConnMap.find(toid);
+        if(it != _userConnMap.end())
+        {
+            // toid 在线，转发消息
+            // 服务器主动推送消息给toid用户
+            it->second->send(js.dump());
+            return;
+        }
+    }
+    
+    // toid 不在线，存储离线消息
+}
+
+
 
 
 
 // {"msgid":1,"name":"zhang san2","password":"1234561"}
+// {"msgid":1,"id":22,"password":"123456"}
 // {"msgid":1,"id":24,"password":"123456"}
+// {"msgid":5,"id":22,"from":"zhang san2","to":24,"msg":"hello1"}
+// {"msgid":5,"id":22,"to":24,"msg":"hello1"}
