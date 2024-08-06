@@ -8,7 +8,10 @@ SET(CMAKE_DEPENDS_CHECK_CXX
   "/home/yuqihui/CHAT/src/server/chatservice.cpp" "/home/yuqihui/CHAT/build/src/server/CMakeFiles/ChatServer.dir/chatservice.cpp.o"
   "/home/yuqihui/CHAT/src/server/db/db.cpp" "/home/yuqihui/CHAT/build/src/server/CMakeFiles/ChatServer.dir/db/db.cpp.o"
   "/home/yuqihui/CHAT/src/server/main.cpp" "/home/yuqihui/CHAT/build/src/server/CMakeFiles/ChatServer.dir/main.cpp.o"
-  "/home/yuqihui/CHAT/src/server/usermodel.cpp" "/home/yuqihui/CHAT/build/src/server/CMakeFiles/ChatServer.dir/usermodel.cpp.o"
+  "/home/yuqihui/CHAT/src/server/model/friendmodel.cpp" "/home/yuqihui/CHAT/build/src/server/CMakeFiles/ChatServer.dir/model/friendmodel.cpp.o"
+  "/home/yuqihui/CHAT/src/server/model/groupmodel.cpp" "/home/yuqihui/CHAT/build/src/server/CMakeFiles/ChatServer.dir/model/groupmodel.cpp.o"
+  "/home/yuqihui/CHAT/src/server/model/offlinemessagemodel.cpp" "/home/yuqihui/CHAT/build/src/server/CMakeFiles/ChatServer.dir/model/offlinemessagemodel.cpp.o"
+  "/home/yuqihui/CHAT/src/server/model/usermodel.cpp" "/home/yuqihui/CHAT/build/src/server/CMakeFiles/ChatServer.dir/model/usermodel.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -21,6 +24,7 @@ SET(CMAKE_C_TARGET_INCLUDE_PATH
   "../include"
   "../include/server"
   "../include/server/db"
+  "../include/server/model"
   "../thirdparty"
   )
 SET(CMAKE_CXX_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})

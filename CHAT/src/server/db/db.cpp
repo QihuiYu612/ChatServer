@@ -7,6 +7,10 @@ static string user = "root";
 static string password = "964566733Yu.";
 static string dbname = "chat";
 
+/*
+    MySQL封装了MySQL 数据库的基本操作，包括连接、更新和查询，确保了在进行数据库操作时更加方便和安全
+*/
+
 // 初始化数据库连接
 MySQL::MySQL()
 {

@@ -59,7 +59,8 @@
         "condition_variable": "cpp",
         "ctime": "cpp",
         "ratio": "cpp",
-        "thread": "cpp"
+        "thread": "cpp",
+        "codecvt": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

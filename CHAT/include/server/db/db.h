@@ -23,8 +23,13 @@ public:
     // 获取连接
     MYSQL* getConnection();
 
+    MYSQL* getconn(){
+        return _conn;
+    }
+
 private:
     MYSQL *_conn;
+    
 };
 
 #endif // !DB_H
