@@ -8,12 +8,6 @@
 
 ../include/public.hpp
 
-../include/server/chatserver.hpp
-muduo/net/TcpServer.h
--
-muduo/net/EventLoop.h
--
-
 ../include/server/chatservice.hpp
 muduo/net/TcpConnection.h
 -
@@ -33,12 +27,6 @@ offlinemessagemodel.hpp
 ../include/server/offlinemessagemodel.hpp
 json.hpp
 ../include/server/json.hpp
-
-../include/server/db/db.h
-mysql/mysql.h
--
-string
--
 
 ../include/server/model/friendmodel.hpp
 user.hpp
@@ -408,18 +396,6 @@ limits
 type_traits
 -
 
-/home/yuqihui/CHAT/src/server/chatserver.cpp
-chatserver.hpp
-/home/yuqihui/CHAT/src/server/chatserver.hpp
-json.hpp
-/home/yuqihui/CHAT/src/server/json.hpp
-chatservice.hpp
-/home/yuqihui/CHAT/src/server/chatservice.hpp
-functional
--
-string
--
-
 /home/yuqihui/CHAT/src/server/chatservice.cpp
 chatservice.hpp
 /home/yuqihui/CHAT/src/server/chatservice.hpp
@@ -429,44 +405,6 @@ muduo/base/Logging.h
 /home/yuqihui/CHAT/src/server/muduo/base/Logging.h
 vector
 -
-iostream
--
-
-/home/yuqihui/CHAT/src/server/main.cpp
-chatserver.hpp
-/home/yuqihui/CHAT/src/server/chatserver.hpp
-chatservice.hpp
-/home/yuqihui/CHAT/src/server/chatservice.hpp
-iostream
--
-signal.h
--
-
-/home/yuqihui/CHAT/src/server/model/friendmodel.cpp
-friendmodel.hpp
-/home/yuqihui/CHAT/src/server/model/friendmodel.hpp
-db.h
-/home/yuqihui/CHAT/src/server/model/db.h
-iostream
--
-
-/home/yuqihui/CHAT/src/server/model/groupmodel.cpp
-groupmodel.hpp
-/home/yuqihui/CHAT/src/server/model/groupmodel.hpp
-db.h
-/home/yuqihui/CHAT/src/server/model/db.h
-
-/home/yuqihui/CHAT/src/server/model/offlinemessagemodel.cpp
-offlinemessagemodel.hpp
-/home/yuqihui/CHAT/src/server/model/offlinemessagemodel.hpp
-db.h
-/home/yuqihui/CHAT/src/server/model/db.h
-
-/home/yuqihui/CHAT/src/server/model/usermodel.cpp
-usermodel.hpp
-/home/yuqihui/CHAT/src/server/model/usermodel.hpp
-db.h
-/home/yuqihui/CHAT/src/server/model/db.h
 iostream
 -
 

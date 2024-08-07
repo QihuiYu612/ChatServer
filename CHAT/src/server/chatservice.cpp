@@ -32,7 +32,7 @@ ChatService::ChatService()
     _msgHandlerMap.insert({REG_MSG, std::bind(&ChatService::reg, this, _1, _2, _3)});
     _msgHandlerMap.insert({ONE_CHAT_MSG, std::bind(&ChatService::oneChat, this, _1, _2, _3)});
     _msgHandlerMap.insert({ADD_FRIEND_MSG, std::bind(&ChatService::addFriend, this, _1, _2, _3)});
-    _msgHandlerMap.insert({GRATE_GROUP_MSG, std::bind(&ChatService::createGroup, this, _1, _2, _3)});
+    _msgHandlerMap.insert({CREATE_GROUP_MSG, std::bind(&ChatService::createGroup, this, _1, _2, _3)});
     _msgHandlerMap.insert({ADD_GROUP_MSG, std::bind(&ChatService::addGroup, this, _1, _2, _3)});
     _msgHandlerMap.insert({GROUP_CHAT_MSG, std::bind(&ChatService::groupChat, this, _1, _2, _3)});
 }
@@ -150,6 +150,7 @@ void ChatService::login(const TcpConnectionPtr &conn, json &js, Timestamp time)
         json response;
         response["msgid"] = REG_MSG_ACK;
         response["errno"] = 1;
+        response["errmsg"] = "id or password is invalid";
         conn->send(response.dump());
     }
 }
@@ -215,7 +216,7 @@ void ChatService::clientCloseException(const TcpConnectionPtr &conn)
 
 void ChatService::oneChat(const TcpConnectionPtr &conn, json &js, Timestamp time)
 {
-    int toid = js["to"].get<int>();
+    int toid = js["toid"].get<int>();
 
     {
         lock_guard<mutex> lock(_connMutex);
@@ -301,8 +302,8 @@ void ChatService::groupChat(const TcpConnectionPtr &conn, json &js, Timestamp ti
 // {"msgid":1,"id":22,"password":"123456"}
 // {"msgid":1,"id":24,"password":"123456"}
 // {"msgid":1,"id":25,"password":"123456"}
-// {"msgid":5,"id":24,"from":"zhang san2","to":24,"msg":"hello1"}
-// {"msgid":5,"id":22,"to":24,"msg":"hello1"}
+// {"msgid":5,"id":24,"from":"zhang san2","toid":24,"msg":"hello1"}
+// {"msgid":5,"id":22,"toid":24,"msg":"hello1"}
 // {"msgid":6,"id":24,"friendid":25}
 
 // {"msgid":7,"id":24,"groupname":"a","groupdesc":"a"}

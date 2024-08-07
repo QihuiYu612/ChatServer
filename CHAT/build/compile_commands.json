@@ -38,5 +38,10 @@
   "directory": "/home/yuqihui/CHAT/build/src/server",
   "command": "/usr/bin/g++    -g -g -I/home/yuqihui/CHAT/include -I/home/yuqihui/CHAT/include/server -I/home/yuqihui/CHAT/include/server/db -I/home/yuqihui/CHAT/include/server/model -I/home/yuqihui/CHAT/thirdparty    -o CMakeFiles/ChatServer.dir/model/usermodel.cpp.o -c /home/yuqihui/CHAT/src/server/model/usermodel.cpp",
   "file": "/home/yuqihui/CHAT/src/server/model/usermodel.cpp"
+},
+{
+  "directory": "/home/yuqihui/CHAT/build/src/client",
+  "command": "/usr/bin/g++    -g -g -I/home/yuqihui/CHAT/include -I/home/yuqihui/CHAT/include/server -I/home/yuqihui/CHAT/include/server/db -I/home/yuqihui/CHAT/include/server/model -I/home/yuqihui/CHAT/thirdparty    -o CMakeFiles/ChatClient.dir/main.cpp.o -c /home/yuqihui/CHAT/src/client/main.cpp",
+  "file": "/home/yuqihui/CHAT/src/client/main.cpp"
 }
 ]

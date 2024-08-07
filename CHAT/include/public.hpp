@@ -14,9 +14,10 @@ enum EnMsgType
     ONE_CHAT_MSG,   // 聊天消息
     ADD_FRIEND_MSG, // 添加好友消息
 
-    GRATE_GROUP_MSG, // 创建群组
+    CREATE_GROUP_MSG, // 创建群组
     ADD_GROUP_MSG,   // 加入群组
     GROUP_CHAT_MSG,  // 群聊天
+    LOGINOUT_MSG
 };
 
 #endif // !PUBLIC_H
