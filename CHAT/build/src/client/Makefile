@@ -102,42 +102,42 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-src/client/CMakeFiles/ChatClient.dir/rule:
-	cd /home/yuqihui/CHAT/build && $(MAKE) -f CMakeFiles/Makefile2 src/client/CMakeFiles/ChatClient.dir/rule
-.PHONY : src/client/CMakeFiles/ChatClient.dir/rule
+src/client/CMakeFiles/client.dir/rule:
+	cd /home/yuqihui/CHAT/build && $(MAKE) -f CMakeFiles/Makefile2 src/client/CMakeFiles/client.dir/rule
+.PHONY : src/client/CMakeFiles/client.dir/rule
 
 # Convenience name for target.
-ChatClient: src/client/CMakeFiles/ChatClient.dir/rule
-.PHONY : ChatClient
+client: src/client/CMakeFiles/client.dir/rule
+.PHONY : client
 
 # fast build rule for target.
-ChatClient/fast:
-	cd /home/yuqihui/CHAT/build && $(MAKE) -f src/client/CMakeFiles/ChatClient.dir/build.make src/client/CMakeFiles/ChatClient.dir/build
-.PHONY : ChatClient/fast
+client/fast:
+	cd /home/yuqihui/CHAT/build && $(MAKE) -f src/client/CMakeFiles/client.dir/build.make src/client/CMakeFiles/client.dir/build
+.PHONY : client/fast
 
-main.o: main.cpp.o
-.PHONY : main.o
+clientMain.o: clientMain.cpp.o
+.PHONY : clientMain.o
 
 # target to build an object file
-main.cpp.o:
-	cd /home/yuqihui/CHAT/build && $(MAKE) -f src/client/CMakeFiles/ChatClient.dir/build.make src/client/CMakeFiles/ChatClient.dir/main.cpp.o
-.PHONY : main.cpp.o
+clientMain.cpp.o:
+	cd /home/yuqihui/CHAT/build && $(MAKE) -f src/client/CMakeFiles/client.dir/build.make src/client/CMakeFiles/client.dir/clientMain.cpp.o
+.PHONY : clientMain.cpp.o
 
-main.i: main.cpp.i
-.PHONY : main.i
+clientMain.i: clientMain.cpp.i
+.PHONY : clientMain.i
 
 # target to preprocess a source file
-main.cpp.i:
-	cd /home/yuqihui/CHAT/build && $(MAKE) -f src/client/CMakeFiles/ChatClient.dir/build.make src/client/CMakeFiles/ChatClient.dir/main.cpp.i
-.PHONY : main.cpp.i
+clientMain.cpp.i:
+	cd /home/yuqihui/CHAT/build && $(MAKE) -f src/client/CMakeFiles/client.dir/build.make src/client/CMakeFiles/client.dir/clientMain.cpp.i
+.PHONY : clientMain.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+clientMain.s: clientMain.cpp.s
+.PHONY : clientMain.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	cd /home/yuqihui/CHAT/build && $(MAKE) -f src/client/CMakeFiles/ChatClient.dir/build.make src/client/CMakeFiles/ChatClient.dir/main.cpp.s
-.PHONY : main.cpp.s
+clientMain.cpp.s:
+	cd /home/yuqihui/CHAT/build && $(MAKE) -f src/client/CMakeFiles/client.dir/build.make src/client/CMakeFiles/client.dir/clientMain.cpp.s
+.PHONY : clientMain.cpp.s
 
 # Help Target
 help:
@@ -145,12 +145,12 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... ChatClient"
+	@echo "... client"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... clientMain.o"
+	@echo "... clientMain.i"
+	@echo "... clientMain.s"
 .PHONY : help
 
 

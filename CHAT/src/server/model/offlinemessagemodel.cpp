@@ -2,6 +2,8 @@
 #include "db.h"
 
 // 存储用户的离线消息
+// userid如果设置成主键就会出现只能存储一条离线消息的bug
+// 设置成not null 自动设置主键
 void OfflineMsgModel::insert(int userid, string msg)
 {
     // 组装sql语句

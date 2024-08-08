@@ -35,6 +35,7 @@ ChatService::ChatService()
     _msgHandlerMap.insert({CREATE_GROUP_MSG, std::bind(&ChatService::createGroup, this, _1, _2, _3)});
     _msgHandlerMap.insert({ADD_GROUP_MSG, std::bind(&ChatService::addGroup, this, _1, _2, _3)});
     _msgHandlerMap.insert({GROUP_CHAT_MSG, std::bind(&ChatService::groupChat, this, _1, _2, _3)});
+    _msgHandlerMap.insert({LOGINOUT_MSG, std::bind(&ChatService::loginout, this, _1, _2, _3)});
 }
 
 // 服务器异常，业务重置方法
@@ -69,6 +70,7 @@ MsgHandler ChatService::getHandler(int msgid)
 // 业务和数据库拆开
 void ChatService::login(const TcpConnectionPtr &conn, json &js, Timestamp time)
 {
+    LOG_INFO << "***";
     LOG_INFO << "do login service!!!";
     int id = js["id"].get<int>();
     string pwd = js["password"];
@@ -81,7 +83,7 @@ void ChatService::login(const TcpConnectionPtr &conn, json &js, Timestamp time)
         {
             // 该用户以及登录，不允许重复登录
             json response;
-            response["msgid"] = REG_MSG_ACK;
+            response["msgid"] = LOGIN_MSG_ACK;
             response["errno"] = 2;
             response["errmsg"] = "该用户以及登录，不允许重复登录";
             // conn 是一个 TcpConnectionPtr 对象，
@@ -110,7 +112,7 @@ void ChatService::login(const TcpConnectionPtr &conn, json &js, Timestamp time)
             _userModel.updateState(user);
 
             json response;
-            response["msgid"] = REG_MSG_ACK;
+            response["msgid"] = LOGIN_MSG_ACK;
             response["errno"] = 0;
             response["id"] = user.getId();
             response["name"] = user.getName();
@@ -139,6 +141,33 @@ void ChatService::login(const TcpConnectionPtr &conn, json &js, Timestamp time)
                 }
                 response["friends"] = vec2;
             }
+            // 查询用户的群组信息
+            // 供客户端登录时候显示的信息：用户组群信息
+            vector<Group> groupuserVec = _groupModel.queryGroups(id);
+            if (!groupuserVec.empty()) {
+                // 每个组的id，name，desc，所有用户
+                // group:[{groupid:[xxx, xxx, xxx, xxx]}]
+                vector<string> groupV;
+                for (Group &group : groupuserVec) {
+                    json grpjson;
+                    grpjson["id"] = group.getId();
+                    grpjson["groupname"] = group.getName();
+                    grpjson["groupdesc"] = group.getDesc();
+                    vector<string> userV;
+                    for (GroupUser &user : group.getUsers()) {
+                        json js;
+                        js["id"] = user.getId();
+                        js["name"] = user.getName();
+                        js["state"] = user.getState();
+                        js["role"] = user.getRole();
+                        userV.push_back(js.dump());
+                    }
+                    grpjson["users"] = userV;
+                    groupV.push_back(grpjson.dump());
+                }
+
+                response["groups"] = groupV;
+            }
             // 将 JSON 格式的响应消息发送给客户端
             conn->send(response.dump());
         }
@@ -148,7 +177,7 @@ void ChatService::login(const TcpConnectionPtr &conn, json &js, Timestamp time)
         // 登录失败
         LOG_INFO << "登录失败，用户不存在或密码错误";
         json response;
-        response["msgid"] = REG_MSG_ACK;
+        response["msgid"] = LOGIN_MSG_ACK;
         response["errno"] = 1;
         response["errmsg"] = "id or password is invalid";
         conn->send(response.dump());
@@ -186,6 +215,23 @@ void ChatService::reg(const TcpConnectionPtr &conn, json &js, Timestamp time)
         response["id"] = user.getId();
         conn->send(response.dump());
     }
+}
+
+void ChatService::loginout(const TcpConnectionPtr &conn, json &js, Timestamp time)
+{
+    int userid = js["id"].get<int>();
+    {
+        lock_guard<mutex> lock(_connMutex);
+        auto it = _userConnMap.find(userid);
+        if( it!=_userConnMap.end() )
+        {
+            _userConnMap.erase(it);
+        }
+    }
+    
+    // 更新用户的状态信息
+    User user(userid, "", "", "offline");
+    _userModel.updateState(user);
 }
 
 // 处理客户端异常退出

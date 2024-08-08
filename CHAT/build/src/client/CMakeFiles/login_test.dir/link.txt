@@ -1,0 +1,1 @@
+/usr/bin/g++   -g -g    CMakeFiles/login_test.dir/test_login.cpp.o  -o ../../../bin/login_test -rdynamic -lpthread 
