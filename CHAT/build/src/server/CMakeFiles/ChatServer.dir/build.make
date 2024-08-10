@@ -236,6 +236,29 @@ src/server/CMakeFiles/ChatServer.dir/model/usermodel.cpp.o.provides: src/server/
 
 src/server/CMakeFiles/ChatServer.dir/model/usermodel.cpp.o.provides.build: src/server/CMakeFiles/ChatServer.dir/model/usermodel.cpp.o
 
+src/server/CMakeFiles/ChatServer.dir/redis/redis.cpp.o: src/server/CMakeFiles/ChatServer.dir/flags.make
+src/server/CMakeFiles/ChatServer.dir/redis/redis.cpp.o: ../src/server/redis/redis.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/yuqihui/CHAT/build/CMakeFiles $(CMAKE_PROGRESS_9)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/server/CMakeFiles/ChatServer.dir/redis/redis.cpp.o"
+	cd /home/yuqihui/CHAT/build/src/server && /usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ChatServer.dir/redis/redis.cpp.o -c /home/yuqihui/CHAT/src/server/redis/redis.cpp
+
+src/server/CMakeFiles/ChatServer.dir/redis/redis.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ChatServer.dir/redis/redis.cpp.i"
+	cd /home/yuqihui/CHAT/build/src/server && /usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/yuqihui/CHAT/src/server/redis/redis.cpp > CMakeFiles/ChatServer.dir/redis/redis.cpp.i
+
+src/server/CMakeFiles/ChatServer.dir/redis/redis.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ChatServer.dir/redis/redis.cpp.s"
+	cd /home/yuqihui/CHAT/build/src/server && /usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/yuqihui/CHAT/src/server/redis/redis.cpp -o CMakeFiles/ChatServer.dir/redis/redis.cpp.s
+
+src/server/CMakeFiles/ChatServer.dir/redis/redis.cpp.o.requires:
+.PHONY : src/server/CMakeFiles/ChatServer.dir/redis/redis.cpp.o.requires
+
+src/server/CMakeFiles/ChatServer.dir/redis/redis.cpp.o.provides: src/server/CMakeFiles/ChatServer.dir/redis/redis.cpp.o.requires
+	$(MAKE) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/redis/redis.cpp.o.provides.build
+.PHONY : src/server/CMakeFiles/ChatServer.dir/redis/redis.cpp.o.provides
+
+src/server/CMakeFiles/ChatServer.dir/redis/redis.cpp.o.provides.build: src/server/CMakeFiles/ChatServer.dir/redis/redis.cpp.o
+
 # Object files for target ChatServer
 ChatServer_OBJECTS = \
 "CMakeFiles/ChatServer.dir/chatserver.cpp.o" \
@@ -245,7 +268,8 @@ ChatServer_OBJECTS = \
 "CMakeFiles/ChatServer.dir/model/friendmodel.cpp.o" \
 "CMakeFiles/ChatServer.dir/model/groupmodel.cpp.o" \
 "CMakeFiles/ChatServer.dir/model/offlinemessagemodel.cpp.o" \
-"CMakeFiles/ChatServer.dir/model/usermodel.cpp.o"
+"CMakeFiles/ChatServer.dir/model/usermodel.cpp.o" \
+"CMakeFiles/ChatServer.dir/redis/redis.cpp.o"
 
 # External object files for target ChatServer
 ChatServer_EXTERNAL_OBJECTS =
@@ -258,6 +282,7 @@ ChatServer_EXTERNAL_OBJECTS =
 ../bin/ChatServer: src/server/CMakeFiles/ChatServer.dir/model/groupmodel.cpp.o
 ../bin/ChatServer: src/server/CMakeFiles/ChatServer.dir/model/offlinemessagemodel.cpp.o
 ../bin/ChatServer: src/server/CMakeFiles/ChatServer.dir/model/usermodel.cpp.o
+../bin/ChatServer: src/server/CMakeFiles/ChatServer.dir/redis/redis.cpp.o
 ../bin/ChatServer: src/server/CMakeFiles/ChatServer.dir/build.make
 ../bin/ChatServer: src/server/CMakeFiles/ChatServer.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable ../../../bin/ChatServer"
@@ -275,6 +300,7 @@ src/server/CMakeFiles/ChatServer.dir/requires: src/server/CMakeFiles/ChatServer.
 src/server/CMakeFiles/ChatServer.dir/requires: src/server/CMakeFiles/ChatServer.dir/model/groupmodel.cpp.o.requires
 src/server/CMakeFiles/ChatServer.dir/requires: src/server/CMakeFiles/ChatServer.dir/model/offlinemessagemodel.cpp.o.requires
 src/server/CMakeFiles/ChatServer.dir/requires: src/server/CMakeFiles/ChatServer.dir/model/usermodel.cpp.o.requires
+src/server/CMakeFiles/ChatServer.dir/requires: src/server/CMakeFiles/ChatServer.dir/redis/redis.cpp.o.requires
 .PHONY : src/server/CMakeFiles/ChatServer.dir/requires
 
 src/server/CMakeFiles/ChatServer.dir/clean:

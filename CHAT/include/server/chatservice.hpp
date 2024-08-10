@@ -9,7 +9,7 @@ using namespace std;
 using namespace muduo;
 using namespace muduo::net;
 
-// #include "group.hpp"
+#include "redis.hpp"
 #include "groupmodel.hpp"
 #include "friendmodel.hpp"
 #include "usermodel.hpp"
@@ -39,7 +39,8 @@ public:
     void addFriend(const TcpConnectionPtr &conn, json &js, Timestamp time);
     // 获取消息对应的处理器
     MsgHandler getHandler(int msgid);
-    // 服务器异常，业务重置方法
+    // 服务器CTRL+C退出时重置一下user表的状态
+    // 服务器异常，业务重置方法，不用每次手动更新数据库了
     void reset();
     // 处理注销业务
     void loginout(const TcpConnectionPtr &conn, json &js, Timestamp time);
@@ -51,6 +52,9 @@ public:
     void addGroup(const TcpConnectionPtr &conn, json &js, Timestamp time);
     // 群组聊天业务
     void groupChat(const TcpConnectionPtr &conn, json &js, Timestamp time);
+
+    // 对redis所接收到的订阅信息进行业务处理，并注册消息处理函数
+    void handleRedisSubscribeMessage(int, string);
     
 private:
     ChatService();
@@ -64,7 +68,7 @@ private:
     //定义互斥锁，保证 _userConnMap 的线程安全
     mutex _connMutex;
 
-    // 数据操作类对象
+    // 数据操作类对象,避免频繁创建
     UserModel _userModel;
 
     OfflineMsgModel _offlinemessagemodel;
@@ -72,6 +76,9 @@ private:
     FriendModel _friendmodel;
 
     GroupModel _groupModel;
+
+    // redis操作对象
+    Redis _redis;
 };
 
 #endif // !CHATSERVICE_H

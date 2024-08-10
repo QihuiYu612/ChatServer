@@ -17,6 +17,8 @@ functional
 -
 mutex
 -
+redis.hpp
+../include/server/redis.hpp
 groupmodel.hpp
 ../include/server/groupmodel.hpp
 friendmodel.hpp
@@ -65,6 +67,16 @@ string
 ../include/server/model/usermodel.hpp
 user.hpp
 ../include/server/model/user.hpp
+
+../include/server/redis/redis.hpp
+hiredis/hiredis.h
+-
+thread
+-
+string
+-
+functional
+-
 
 ../thirdparty/json.hpp
 algorithm
@@ -406,5 +418,13 @@ muduo/base/Logging.h
 vector
 -
 iostream
+-
+
+/home/yuqihui/CHAT/src/server/redis/redis.cpp
+redis.hpp
+/home/yuqihui/CHAT/src/server/redis/redis.hpp
+iostream
+-
+muduo/base/Logging.h
 -
 

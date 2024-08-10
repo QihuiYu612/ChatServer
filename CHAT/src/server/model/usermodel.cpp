@@ -1,6 +1,9 @@
 #include "usermodel.hpp"
 #include "db.h"
 #include <iostream>
+
+#include "muduo/base/Logging.h"
+
 using namespace std;
 
 // User表的增加方法
@@ -58,10 +61,9 @@ bool UserModel::updateState(User user)
     // 组装sql语句
     char sql[1024] = {0};
     sprintf(sql, "update user set state = '%s' where id = %d ", user.getState().c_str(), user.getId());
-
     MySQL mysql;
     if (mysql.connect())
-    {
+    {   
         if (mysql.update(sql))
         {
             return true;
