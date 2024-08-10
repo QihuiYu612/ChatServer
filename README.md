@@ -1,8 +1,8 @@
 编译方式
-cd build
-rm -rf *
-cmake ..
-make
+1.cd build
+2.rm -rf *
+3.cmake ..
+4.make
 ____________________________
 基于muduo库的C++集群聊天服务器
 
