@@ -1,6 +1,13 @@
 
 基于muduo库的C++集群聊天服务器
 
+24.8.6
+更新连接池，连接池与原代码交替部分有些乱，待修改
+配置连接池文件为mysql.ini
+连接池效果还是非常好的
+![image](https://github.com/user-attachments/assets/62fdcaed-d272-40f0-9386-f77a11e5cc0f)
+
+
 技术栈：
   1. Json序列化和反序列化
   2. muduo网络库开发
