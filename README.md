@@ -8,6 +8,9 @@
 ![image](https://github.com/user-attachments/assets/62fdcaed-d272-40f0-9386-f77a11e5cc0f)
 
 
+24.8.10
+添加nginx负责均衡、redis中间件
+
 技术栈：
   1. Json序列化和反序列化
   2. muduo网络库开发
