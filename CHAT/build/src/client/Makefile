@@ -42,10 +42,10 @@ EQUALS = =
 CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/yuqihui/CHAT
+CMAKE_SOURCE_DIR = /home/yuqihui/CHAT1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/yuqihui/CHAT/build
+CMAKE_BINARY_DIR = /home/yuqihui/CHAT1/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -72,14 +72,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/yuqihui/CHAT/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/yuqihui/CHAT/build/CMakeFiles /home/yuqihui/CHAT/build/src/client/CMakeFiles/progress.marks
-	cd /home/yuqihui/CHAT/build && $(MAKE) -f CMakeFiles/Makefile2 src/client/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yuqihui/CHAT/build/CMakeFiles 0
+	cd /home/yuqihui/CHAT1/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/yuqihui/CHAT1/build/CMakeFiles /home/yuqihui/CHAT1/build/src/client/CMakeFiles/progress.marks
+	cd /home/yuqihui/CHAT1/build && $(MAKE) -f CMakeFiles/Makefile2 src/client/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yuqihui/CHAT1/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/yuqihui/CHAT/build && $(MAKE) -f CMakeFiles/Makefile2 src/client/clean
+	cd /home/yuqihui/CHAT1/build && $(MAKE) -f CMakeFiles/Makefile2 src/client/clean
 .PHONY : clean
 
 # The main clean target
@@ -88,22 +88,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/yuqihui/CHAT/build && $(MAKE) -f CMakeFiles/Makefile2 src/client/preinstall
+	cd /home/yuqihui/CHAT1/build && $(MAKE) -f CMakeFiles/Makefile2 src/client/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/yuqihui/CHAT/build && $(MAKE) -f CMakeFiles/Makefile2 src/client/preinstall
+	cd /home/yuqihui/CHAT1/build && $(MAKE) -f CMakeFiles/Makefile2 src/client/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/yuqihui/CHAT/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/yuqihui/CHAT1/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/client/CMakeFiles/client.dir/rule:
-	cd /home/yuqihui/CHAT/build && $(MAKE) -f CMakeFiles/Makefile2 src/client/CMakeFiles/client.dir/rule
+	cd /home/yuqihui/CHAT1/build && $(MAKE) -f CMakeFiles/Makefile2 src/client/CMakeFiles/client.dir/rule
 .PHONY : src/client/CMakeFiles/client.dir/rule
 
 # Convenience name for target.
@@ -112,15 +112,29 @@ client: src/client/CMakeFiles/client.dir/rule
 
 # fast build rule for target.
 client/fast:
-	cd /home/yuqihui/CHAT/build && $(MAKE) -f src/client/CMakeFiles/client.dir/build.make src/client/CMakeFiles/client.dir/build
+	cd /home/yuqihui/CHAT1/build && $(MAKE) -f src/client/CMakeFiles/client.dir/build.make src/client/CMakeFiles/client.dir/build
 .PHONY : client/fast
+
+# Convenience name for target.
+src/client/CMakeFiles/main.dir/rule:
+	cd /home/yuqihui/CHAT1/build && $(MAKE) -f CMakeFiles/Makefile2 src/client/CMakeFiles/main.dir/rule
+.PHONY : src/client/CMakeFiles/main.dir/rule
+
+# Convenience name for target.
+main: src/client/CMakeFiles/main.dir/rule
+.PHONY : main
+
+# fast build rule for target.
+main/fast:
+	cd /home/yuqihui/CHAT1/build && $(MAKE) -f src/client/CMakeFiles/main.dir/build.make src/client/CMakeFiles/main.dir/build
+.PHONY : main/fast
 
 clientMain.o: clientMain.cpp.o
 .PHONY : clientMain.o
 
 # target to build an object file
 clientMain.cpp.o:
-	cd /home/yuqihui/CHAT/build && $(MAKE) -f src/client/CMakeFiles/client.dir/build.make src/client/CMakeFiles/client.dir/clientMain.cpp.o
+	cd /home/yuqihui/CHAT1/build && $(MAKE) -f src/client/CMakeFiles/client.dir/build.make src/client/CMakeFiles/client.dir/clientMain.cpp.o
 .PHONY : clientMain.cpp.o
 
 clientMain.i: clientMain.cpp.i
@@ -128,7 +142,7 @@ clientMain.i: clientMain.cpp.i
 
 # target to preprocess a source file
 clientMain.cpp.i:
-	cd /home/yuqihui/CHAT/build && $(MAKE) -f src/client/CMakeFiles/client.dir/build.make src/client/CMakeFiles/client.dir/clientMain.cpp.i
+	cd /home/yuqihui/CHAT1/build && $(MAKE) -f src/client/CMakeFiles/client.dir/build.make src/client/CMakeFiles/client.dir/clientMain.cpp.i
 .PHONY : clientMain.cpp.i
 
 clientMain.s: clientMain.cpp.s
@@ -136,8 +150,32 @@ clientMain.s: clientMain.cpp.s
 
 # target to generate assembly for a file
 clientMain.cpp.s:
-	cd /home/yuqihui/CHAT/build && $(MAKE) -f src/client/CMakeFiles/client.dir/build.make src/client/CMakeFiles/client.dir/clientMain.cpp.s
+	cd /home/yuqihui/CHAT1/build && $(MAKE) -f src/client/CMakeFiles/client.dir/build.make src/client/CMakeFiles/client.dir/clientMain.cpp.s
 .PHONY : clientMain.cpp.s
+
+main.o: main.cpp.o
+.PHONY : main.o
+
+# target to build an object file
+main.cpp.o:
+	cd /home/yuqihui/CHAT1/build && $(MAKE) -f src/client/CMakeFiles/main.dir/build.make src/client/CMakeFiles/main.dir/main.cpp.o
+.PHONY : main.cpp.o
+
+main.i: main.cpp.i
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	cd /home/yuqihui/CHAT1/build && $(MAKE) -f src/client/CMakeFiles/main.dir/build.make src/client/CMakeFiles/main.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	cd /home/yuqihui/CHAT1/build && $(MAKE) -f src/client/CMakeFiles/main.dir/build.make src/client/CMakeFiles/main.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 # Help Target
 help:
@@ -147,10 +185,14 @@ help:
 	@echo "... depend"
 	@echo "... client"
 	@echo "... edit_cache"
+	@echo "... main"
 	@echo "... rebuild_cache"
 	@echo "... clientMain.o"
 	@echo "... clientMain.i"
 	@echo "... clientMain.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 
@@ -162,6 +204,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/yuqihui/CHAT/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/yuqihui/CHAT1/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -7,4 +7,4 @@ src/client/CMakeFiles/client.dir/clientMain.cpp.o
  ../include/server/model/groupuser.hpp
  ../include/server/model/user.hpp
  ../thirdparty/json.hpp
- /home/yuqihui/CHAT/src/client/clientMain.cpp
+ /home/yuqihui/CHAT1/src/client/clientMain.cpp

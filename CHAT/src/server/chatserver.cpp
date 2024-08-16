@@ -14,7 +14,7 @@ ChatServer::ChatServer(EventLoop *loop,               // 事件循环
                        const string &nameArg)         // 服务器的名字
     : _server(loop, listenAddr, nameArg), _loop(loop)
 {
-    // 注册链接回调
+    // 注册链接回调 TcpServer ChatServer::_server
     _server.setConnectionCallback(std::bind(&ChatServer::onConnection, this, _1));
 
     // 给服务器注册用户读写事件回调
@@ -34,11 +34,11 @@ void ChatServer::start()
 // 当有新的客户端连接时，onConnection 回调函数会被调用。
 void ChatServer::onConnection(const TcpConnectionPtr &conn)
 {
+    // 客户端连接，muduo/net/TcpServer 自己有输出
     // 客户端断开连接
     if(!conn->connected())
     {
         ChatService::instance()->clientCloseException(conn);
-        
         conn->shutdown();
     }
 }

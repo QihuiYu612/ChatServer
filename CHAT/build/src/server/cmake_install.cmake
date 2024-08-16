@@ -1,4 +1,4 @@
-# Install script for directory: /home/yuqihui/CHAT/src/server
+# Install script for directory: /home/yuqihui/CHAT1/src/server
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)

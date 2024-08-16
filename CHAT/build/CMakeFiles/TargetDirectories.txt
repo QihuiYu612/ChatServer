@@ -1,2 +1,3 @@
-/home/yuqihui/CHAT/build/src/server/CMakeFiles/ChatServer.dir
-/home/yuqihui/CHAT/build/src/client/CMakeFiles/client.dir
+/home/yuqihui/CHAT1/build/src/server/CMakeFiles/ChatServer.dir
+/home/yuqihui/CHAT1/build/src/client/CMakeFiles/client.dir
+/home/yuqihui/CHAT1/build/src/client/CMakeFiles/main.dir

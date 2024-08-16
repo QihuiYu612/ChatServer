@@ -4,15 +4,17 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/home/yuqihui/CHAT/src/server/chatserver.cpp" "/home/yuqihui/CHAT/build/src/server/CMakeFiles/ChatServer.dir/chatserver.cpp.o"
-  "/home/yuqihui/CHAT/src/server/chatservice.cpp" "/home/yuqihui/CHAT/build/src/server/CMakeFiles/ChatServer.dir/chatservice.cpp.o"
-  "/home/yuqihui/CHAT/src/server/db/db.cpp" "/home/yuqihui/CHAT/build/src/server/CMakeFiles/ChatServer.dir/db/db.cpp.o"
-  "/home/yuqihui/CHAT/src/server/main.cpp" "/home/yuqihui/CHAT/build/src/server/CMakeFiles/ChatServer.dir/main.cpp.o"
-  "/home/yuqihui/CHAT/src/server/model/friendmodel.cpp" "/home/yuqihui/CHAT/build/src/server/CMakeFiles/ChatServer.dir/model/friendmodel.cpp.o"
-  "/home/yuqihui/CHAT/src/server/model/groupmodel.cpp" "/home/yuqihui/CHAT/build/src/server/CMakeFiles/ChatServer.dir/model/groupmodel.cpp.o"
-  "/home/yuqihui/CHAT/src/server/model/offlinemessagemodel.cpp" "/home/yuqihui/CHAT/build/src/server/CMakeFiles/ChatServer.dir/model/offlinemessagemodel.cpp.o"
-  "/home/yuqihui/CHAT/src/server/model/usermodel.cpp" "/home/yuqihui/CHAT/build/src/server/CMakeFiles/ChatServer.dir/model/usermodel.cpp.o"
-  "/home/yuqihui/CHAT/src/server/redis/redis.cpp" "/home/yuqihui/CHAT/build/src/server/CMakeFiles/ChatServer.dir/redis/redis.cpp.o"
+  "/home/yuqihui/CHAT1/src/server/ConnectionPool/CommonConnectionPool.cpp" "/home/yuqihui/CHAT1/build/src/server/CMakeFiles/ChatServer.dir/ConnectionPool/CommonConnectionPool.cpp.o"
+  "/home/yuqihui/CHAT1/src/server/ConnectionPool/Connection.cpp" "/home/yuqihui/CHAT1/build/src/server/CMakeFiles/ChatServer.dir/ConnectionPool/Connection.cpp.o"
+  "/home/yuqihui/CHAT1/src/server/chatserver.cpp" "/home/yuqihui/CHAT1/build/src/server/CMakeFiles/ChatServer.dir/chatserver.cpp.o"
+  "/home/yuqihui/CHAT1/src/server/chatservice.cpp" "/home/yuqihui/CHAT1/build/src/server/CMakeFiles/ChatServer.dir/chatservice.cpp.o"
+  "/home/yuqihui/CHAT1/src/server/db/db.cpp" "/home/yuqihui/CHAT1/build/src/server/CMakeFiles/ChatServer.dir/db/db.cpp.o"
+  "/home/yuqihui/CHAT1/src/server/main.cpp" "/home/yuqihui/CHAT1/build/src/server/CMakeFiles/ChatServer.dir/main.cpp.o"
+  "/home/yuqihui/CHAT1/src/server/model/friendmodel.cpp" "/home/yuqihui/CHAT1/build/src/server/CMakeFiles/ChatServer.dir/model/friendmodel.cpp.o"
+  "/home/yuqihui/CHAT1/src/server/model/groupmodel.cpp" "/home/yuqihui/CHAT1/build/src/server/CMakeFiles/ChatServer.dir/model/groupmodel.cpp.o"
+  "/home/yuqihui/CHAT1/src/server/model/offlinemessagemodel.cpp" "/home/yuqihui/CHAT1/build/src/server/CMakeFiles/ChatServer.dir/model/offlinemessagemodel.cpp.o"
+  "/home/yuqihui/CHAT1/src/server/model/usermodel.cpp" "/home/yuqihui/CHAT1/build/src/server/CMakeFiles/ChatServer.dir/model/usermodel.cpp.o"
+  "/home/yuqihui/CHAT1/src/server/redis/redis.cpp" "/home/yuqihui/CHAT1/build/src/server/CMakeFiles/ChatServer.dir/redis/redis.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -27,6 +29,7 @@ SET(CMAKE_C_TARGET_INCLUDE_PATH
   "../include/server/db"
   "../include/server/model"
   "../include/server/redis"
+  "../include/server/ConnectionPool"
   "../thirdparty"
   )
 SET(CMAKE_CXX_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})

@@ -4,7 +4,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/home/yuqihui/CHAT/src/client/clientMain.cpp" "/home/yuqihui/CHAT/build/src/client/CMakeFiles/client.dir/clientMain.cpp.o"
+  "/home/yuqihui/CHAT1/src/client/clientMain.cpp" "/home/yuqihui/CHAT1/build/src/client/CMakeFiles/client.dir/clientMain.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -19,6 +19,7 @@ SET(CMAKE_C_TARGET_INCLUDE_PATH
   "../include/server/db"
   "../include/server/model"
   "../include/server/redis"
+  "../include/server/ConnectionPool"
   "../thirdparty"
   )
 SET(CMAKE_CXX_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})

@@ -427,6 +427,7 @@ void readTaskHandler(int clientfd)
         char buffer[1024] = {0};
         cout << "***recv阻塞" << endl;
         int len = recv(clientfd, buffer, 1024, 0);  // 阻塞了
+        cout << "***recv阻塞1" << endl;
         if (-1 == len || 0 == len)
         {
             close(clientfd);

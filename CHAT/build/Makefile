@@ -42,10 +42,10 @@ EQUALS = =
 CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/yuqihui/CHAT
+CMAKE_SOURCE_DIR = /home/yuqihui/CHAT1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/yuqihui/CHAT/build
+CMAKE_BINARY_DIR = /home/yuqihui/CHAT1/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -72,9 +72,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yuqihui/CHAT/build/CMakeFiles /home/yuqihui/CHAT/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yuqihui/CHAT1/build/CMakeFiles /home/yuqihui/CHAT1/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yuqihui/CHAT/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yuqihui/CHAT1/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -127,6 +127,19 @@ client/fast:
 	$(MAKE) -f src/client/CMakeFiles/client.dir/build.make src/client/CMakeFiles/client.dir/build
 .PHONY : client/fast
 
+#=============================================================================
+# Target rules for targets named main
+
+# Build rule for target.
+main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 main
+.PHONY : main
+
+# fast build rule for target.
+main/fast:
+	$(MAKE) -f src/client/CMakeFiles/main.dir/build.make src/client/CMakeFiles/main.dir/build
+.PHONY : main/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -137,6 +150,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... ChatServer"
 	@echo "... client"
+	@echo "... main"
 .PHONY : help
 
 

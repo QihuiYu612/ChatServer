@@ -35,6 +35,7 @@ bool isMainMenuRunning = false;
 // 用于读写线程之间的通信
 sem_t rwsem;
 // 记录登录状态
+// C++11提供 多线程共享变量 原子操作
 atomic_bool g_isLoginSuccess{false};
 
 
@@ -138,6 +139,7 @@ int main(int argc, char **argv)
                 cerr << "send login msg error:" << request << endl;
             }
 
+            // 线程通知机制
             sem_wait(&rwsem); // 等待信号量，由子线程处理完登录的响应消息后，通知这里
             // main线程发送完之后，有read线程处理返回结果，read线程调用相应的处理函数。
             // 两个线程之间需要同步。

@@ -18,6 +18,7 @@ using namespace muduo::net;
 using json = nlohmann::json;
 
 // 处理消息事件回调方法类型
+// 定义函数对象类型
 using MsgHandler = std::function<void(const TcpConnectionPtr &conn, json &js, Timestamp time)>;
 
 // 服务层

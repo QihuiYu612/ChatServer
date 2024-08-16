@@ -50,10 +50,10 @@ EQUALS = =
 CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/yuqihui/CHAT
+CMAKE_SOURCE_DIR = /home/yuqihui/CHAT1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/yuqihui/CHAT/build
+CMAKE_BINARY_DIR = /home/yuqihui/CHAT1/build
 
 #=============================================================================
 # Directory level rules for directory src
@@ -95,7 +95,7 @@ src/server/preinstall:
 src/server/CMakeFiles/ChatServer.dir/all:
 	$(MAKE) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/depend
 	$(MAKE) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/yuqihui/CHAT/build/CMakeFiles  1 2 3 4 5 6 7 8 9
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/yuqihui/CHAT1/build/CMakeFiles  1 2 3 4 5 6 7 8 9 10 11
 	@echo "Built target ChatServer"
 .PHONY : src/server/CMakeFiles/ChatServer.dir/all
 
@@ -105,9 +105,9 @@ all: src/server/CMakeFiles/ChatServer.dir/all
 
 # Build rule for subdir invocation for target.
 src/server/CMakeFiles/ChatServer.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yuqihui/CHAT/build/CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yuqihui/CHAT1/build/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 src/server/CMakeFiles/ChatServer.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yuqihui/CHAT/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yuqihui/CHAT1/build/CMakeFiles 0
 .PHONY : src/server/CMakeFiles/ChatServer.dir/rule
 
 # Convenience name for target.
@@ -128,10 +128,12 @@ clean: src/server/CMakeFiles/ChatServer.dir/clean
 
 # Convenience name for "all" pass in the directory.
 src/client/all: src/client/CMakeFiles/client.dir/all
+src/client/all: src/client/CMakeFiles/main.dir/all
 .PHONY : src/client/all
 
 # Convenience name for "clean" pass in the directory.
 src/client/clean: src/client/CMakeFiles/client.dir/clean
+src/client/clean: src/client/CMakeFiles/main.dir/clean
 .PHONY : src/client/clean
 
 # Convenience name for "preinstall" pass in the directory.
@@ -145,7 +147,7 @@ src/client/preinstall:
 src/client/CMakeFiles/client.dir/all:
 	$(MAKE) -f src/client/CMakeFiles/client.dir/build.make src/client/CMakeFiles/client.dir/depend
 	$(MAKE) -f src/client/CMakeFiles/client.dir/build.make src/client/CMakeFiles/client.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/yuqihui/CHAT/build/CMakeFiles  10
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/yuqihui/CHAT1/build/CMakeFiles  12
 	@echo "Built target client"
 .PHONY : src/client/CMakeFiles/client.dir/all
 
@@ -155,9 +157,9 @@ all: src/client/CMakeFiles/client.dir/all
 
 # Build rule for subdir invocation for target.
 src/client/CMakeFiles/client.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yuqihui/CHAT/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yuqihui/CHAT1/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 src/client/CMakeFiles/client.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yuqihui/CHAT/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yuqihui/CHAT1/build/CMakeFiles 0
 .PHONY : src/client/CMakeFiles/client.dir/rule
 
 # Convenience name for target.
@@ -171,6 +173,41 @@ src/client/CMakeFiles/client.dir/clean:
 
 # clean rule for target.
 clean: src/client/CMakeFiles/client.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target src/client/CMakeFiles/main.dir
+
+# All Build rule for target.
+src/client/CMakeFiles/main.dir/all:
+	$(MAKE) -f src/client/CMakeFiles/main.dir/build.make src/client/CMakeFiles/main.dir/depend
+	$(MAKE) -f src/client/CMakeFiles/main.dir/build.make src/client/CMakeFiles/main.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/yuqihui/CHAT1/build/CMakeFiles  13
+	@echo "Built target main"
+.PHONY : src/client/CMakeFiles/main.dir/all
+
+# Include target in all.
+all: src/client/CMakeFiles/main.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+src/client/CMakeFiles/main.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yuqihui/CHAT1/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 src/client/CMakeFiles/main.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yuqihui/CHAT1/build/CMakeFiles 0
+.PHONY : src/client/CMakeFiles/main.dir/rule
+
+# Convenience name for target.
+main: src/client/CMakeFiles/main.dir/rule
+.PHONY : main
+
+# clean rule for target.
+src/client/CMakeFiles/main.dir/clean:
+	$(MAKE) -f src/client/CMakeFiles/main.dir/build.make src/client/CMakeFiles/main.dir/clean
+.PHONY : src/client/CMakeFiles/main.dir/clean
+
+# clean rule for target.
+clean: src/client/CMakeFiles/main.dir/clean
 .PHONY : clean
 
 #=============================================================================

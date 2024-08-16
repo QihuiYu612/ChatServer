@@ -14,9 +14,9 @@
 
 
 add_executable(client clientMain.cpp)
-# add_executable(clientmain main.cpp)
+add_executable(main main.cpp)
 target_link_libraries(client pthread)
-# target_link_libraries(clientmain pthread)
+target_link_libraries(main pthread)
 
 # add_executable(login_test test_login.cpp)
 # target_link_libraries(login_test pthread)

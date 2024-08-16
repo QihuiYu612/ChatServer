@@ -284,6 +284,9 @@ void ChatService::oneChat(const TcpConnectionPtr &conn, json &js, Timestamp time
         {
             // toid 在线，转发消息
             // 服务器主动推送消息给toid用户
+            
+            // cout << "revc data:" << js.dump() << endl;
+            
             it->second->send(js.dump());
             return;
         }
